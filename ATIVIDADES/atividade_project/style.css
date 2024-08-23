@@ -1,0 +1,298 @@
+/* Animação de transição suave */
+button,
+div {
+    transition: background-color 1s ease, color 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1,
+h2,
+h3,
+div {
+    animation: fadeIn 1s ease-in-out;
+    border-radius: 5px;
+}
+
+/* Estilos existentes */
+body {
+    background-color: rgb(107, 175, 202);
+    animation: backgroundChange 10s infinite;
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-color: rgb(107, 175, 202);
+    }
+
+    25% {
+        background-color: rgb(255, 99, 71);
+    }
+
+    50% {
+        background-color: rgb(144, 238, 144);
+    }
+
+    75% {
+        background-color: rgb(173, 216, 230);
+    }
+
+    100% {
+        background-color: rgb(107, 175, 202);
+    }
+}
+
+h1 {
+    color: rgb(0, 162, 255);
+    padding: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    box-sizing: border-box;
+    font-size: 40px;
+    padding: 10px;
+}
+
+h3 {
+    color: black;
+    padding: 10px;
+}
+
+h4 {
+    color: black;
+    padding: 10px;
+}
+
+button {
+    background-color: green;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #000;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+button.cart {
+    background-color: red;
+    color: red;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border: 5px solid #ff0000;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(0, 255, 55)en;
+    color: rgb(0, 255, 55)en;
+    animation: shaking 10s infinite;
+}
+
+button.cart:hover {
+    background-color: white;
+    color: red;
+    animation: shaking 0.29s infinite;
+}
+
+@keyframes shaking {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+div {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+div:hover {
+    background-color: rgb(68, 77, 88);
+    color: rgb(5, 226, 116);
+}
+
+/* Estilos para a área de login */
+.login-area {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.login-area input {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.login-area button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-area button:hover {
+    background-color: darkgreen;
+}
+
+/* Estilos para a barra de rolagem horizontal */
+.main-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.section {
+    min-width: 300px;
+    flex: 0 0 auto;
+    padding: 10px;
+}
+
+.products-container,
+.cart-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.product,
+.cart {
+    background-color: lightgray;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    min-width: 200px;
+    flex: 0 0 auto;
+    background-image: url('https://img.freepik.com/free-psd/yellow-gift-with-golden-ribbon-icon-sign-symbol-3d-background-illustration_56104-2422.jpg?size=626&ext=jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.user-name {
+    font-size: 1.2em;
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+}
+
+.col-25 {
+    flex: 25%;
+}
+
+.col-50 {
+    flex: 50%;
+}
+
+.col-75 {
+    flex: 75%;
+}
+
+.container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #2196F3;
+}
+
+hr {
+    border: 1px solid lightgrey;
+}
+
+span.price {
+    float: right;
+    color: grey;
+}
