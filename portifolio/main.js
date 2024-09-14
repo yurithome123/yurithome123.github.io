@@ -8,8 +8,10 @@ var swiper = new Swiper(".swiper", {
         shadowOffset: 20,
         shadowScale: 0.94,
     },
-    mousewheel: true
+    mousewheel: false
 });
+
+
 swiper.sliderMove = function (s, e) {
     console.log(s)
 }
