@@ -951,10 +951,14 @@ Game
 
   g.time = new g.Time();
 
+
   g.step = function() {
     requestAnimationFrame( g.step );
     g.states[ g.state ].step();
-    g.time.update();
+      g.time.update();
+      if (g.time > 10) {
+          window.location.replace(".\\portifolio\\index.html")
+      }
   };
 
   window.addEventListener( 'load', g.step, false );

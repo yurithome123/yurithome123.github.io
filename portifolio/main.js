@@ -33,3 +33,6 @@ function SwitchF() {
         document.body.style.backgroundColor = "white";
         document.getElementsByName("aside").backgroundColor = "white"
 }
+function ismobile_redirect() {
+
+}  

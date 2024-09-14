@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav ul li i {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.homeLink i {
+    color: #ff6347;
+
+}
+
+.profile i:hover {
+    color: rgb(162, 189, 212);
+}
+
+.content i:hover {
+    color: green;
+}
+
+.images i:hover {
+    color: yellow;
+}
+
+.contact i:hover {
+    color: rgb(0, 170, 255);
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.home-slide .HomeContent {
+    text-align: center;
+}
+
+.home-slide .HomeContent h1,
+.home-slide .HomeContent h2 {
+    margin: 10px 0;
+}
+
+.home-slide .HomeContent .buttonGroup {
+    margin-top: 20px;
+}
+
+.home-slide .HomeContent .buttonGroup button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.home-slide .SideImg img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.slide-help {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.about-us,
+.services,
+.gallery,
+.contactMe {
+    text-align: center;
+}
+
+.about-us .heading,
+.services .heading,
+.gallery .heading,
+.contactMe .heading {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-us .sub-heading {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.about-us .aboutme-deatils {
+    margin-bottom: 20px;
+}
+
+.about-me-divison {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-me-table {
+    margin-bottom: 20px;
+}
+
+.about-me-table li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+.skill-bar li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.skill-bar .bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-bar .active-bar {
+    height: 10px;
+    background-color: #ff6347;
+}
+
+.service {
+    margin-bottom: 20px;
+}
+
+.service-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.service h2 {
+    margin-bottom: 10px;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.contactinfo {
+    margin-bottom: 20px;
+}
+
+.contactinfo i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.contactinfo h3 {
+    margin-bottom: 5px;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button.primary {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+}

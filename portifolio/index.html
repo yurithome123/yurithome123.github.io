@@ -9,8 +9,20 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <script defer src="main.js"></script>
+    <script>
+        function ismobile_redirect() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var resolution_not_ok = window.screen.width < 1024 || window.screen.height < 768 || window.innerWidth < 768;
+            if (isMobile || resolution_not_ok) {
+                window.location.href = "./mobile/index.html";
+            }
+        }
+        window.onload = ismobile_redirect;
+    </script>
+
+
     <title>Yuri Thome Marini Silva</title>
-    <link rel = "icon" type = "image/png" href = "../images/IMG_20240312_172611.jpg">
+    <link rel="icon" type="image/png" href="../images/IMG_20240312_172611.jpg">
 </head>
 
 <body>
@@ -47,7 +59,7 @@
                             <span class="switch__emoji-eye"></span>
                             <span class="switch__emoji-eye"></span>
                             <span class="switch__emoji-mouth"></span>
-                            
+
                         </span>
                     </span>
                 </span>
@@ -62,8 +74,12 @@
                         <h2>A <span class="proffesions">BackEnd Developer</span></h2>
                         <p class="heroline">Nascido em 2007, atuo em projetos envolvendo robótica.</p>
                         <div class="buttonGroup">
-                            <button onclick="location.href='https://wa.me/+5544984484660/?text=Olá Yuri, gostaria de contrata-lo:'">Hire Me</button>
-                            <button onclick="location.href='https://wa.me/+5544984484660/?text=Olá Yuri, gostaria de conversar contigo:'">Contact Me</button>
+                            <button
+                                onclick="location.href='https://wa.me/+5544984484660/?text=Olá Yuri, gostaria de contrata-lo:'">Hire
+                                Me</button>
+                            <button
+                                onclick="location.href='https://wa.me/+5544984484660/?text=Olá Yuri, gostaria de conversar contigo:'">Contact
+                                Me</button>
                         </div>
                     </div>
                     <div class="SideImg">
@@ -200,13 +216,16 @@
                     </div>
                     <form>
                         <h2>Send Me A Message <div class="SocialLinks">
-                                <i onclick="location.href='https://github.com/yurithome123/yurithome123'" class="fa-brands fa-github"></i>
-                                <i onclick="location.href='https://www.instagram.com/yurideveloper'" class="fa-brands fa-instagram"></i>
-                                <i onclick="location.href='http://lattes.cnpq.br/3423755149673186'" class="fa-brands fa-linkedin"></i>
-                            </div> 
+                                <i onclick="location.href='https://github.com/yurithome123/yurithome123'"
+                                    class="fa-brands fa-github"></i>
+                                <i onclick="location.href='https://www.instagram.com/yurideveloper'"
+                                    class="fa-brands fa-instagram"></i>
+                                <i onclick="location.href='http://lattes.cnpq.br/3423755149673186'"
+                                    class="fa-brands fa-linkedin"></i>
+                            </div>
                         </h2>
                         <input type="text" placeholder="Name">
-                        <input type="text" placeholder="email">
+                        <input type="text" placeholder="Email">
                         <textarea rows="10" placeholder="Type your Message Here..."></textarea>
                         <button class="primary">Send</button>
 
