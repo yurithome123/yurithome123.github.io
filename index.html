@@ -9,7 +9,26 @@
     <title>Game YuriDEV</title>
 </head>
 <body>
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading...</div>
+    </div>
     <div class="score">0</div>
     <div class="stage"></div>
+    <iframe id="background-video" width="0" height="0" src="https://www.youtube.com/embed/Tp1mk8DsLuQ?start=26&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <script>
+        const video = document.getElementById('background-video');
+        video.addEventListener('load', () => {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    document.querySelector('.score').style.display = 'block';
+                    document.querySelector('.stage').style.display = 'block';
+                }, 1000); // Match this duration with the CSS transition duration
+            }, 5000); // 5 seconds delay
+        });
+    </script>
 </body>
 </html>
