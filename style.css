@@ -35,6 +35,12 @@ body {
   z-index: 1000;
   transition: opacity 1s ease-out; /* Add transition for opacity */
 }
+
+#loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .spinner {
   border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;

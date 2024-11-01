@@ -970,3 +970,13 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   window.location.replace(".\\portifolio\\index.html")
 }
 
+window.addEventListener('load', function() {
+  const loadingScreen = document.getElementById('loading-screen');
+  setTimeout(() => {
+    loadingScreen.classList.add('hidden');
+    const audio = document.querySelector('audio');
+    audio.play();
+    g.step();
+  }, 1000);
+});
+
