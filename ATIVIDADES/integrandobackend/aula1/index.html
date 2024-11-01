@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="titulo">Seja bem vindo</h1>
+
+    <form>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+        <input type="date" id="idade" placeholder="Digite sua data de nascimento" required>
+        <select id="hobby" required>
+            <option value="">Escolha um hobby</option>
+            <option value="Esportes">Esportes</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Educação">Educação</option>
+            <option value="Música">Música</option>
+            <option value="Arte">Arte</option>
+        </select>
+        <button type="submit">ENVIAR</button>
+    </form>
+    <div id="msg_result"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
