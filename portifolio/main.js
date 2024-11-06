@@ -46,31 +46,14 @@ async function notifyContact(event) {
     const email = document.getElementById('contactEmail').value;
     const message = document.getElementById('contactMessage').value;
 
-    try {
-        const response = await fetch('https://api.staticforms.xyz/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                accessKey: 'YOUR_STATIC_FORMS_KEY', // Get this from staticforms.xyz
-                name: name,
-                email: email,
-                message: message,
-                subject: `Contact from Portfolio - ${name}`
-            })
-        });
-
-        if (response.ok) {
-            alert('Message sent successfully!');
-            event.target.reset();
-        } else {
-            alert('Error sending message. Please try again.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error sending message. Please try again.');
-    }
+    // You can replace this with your preferred notification method
+    const whatsappMessage = `Nova mensagem de contato:\nNome: ${name}\nEmail: ${email}\nMensagem: ${message}`;
+    const whatsappUrl = `https://wa.me/+5544984484660/?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
+    // Clear the form
+    event.target.reset();
     
     return false;
 }
