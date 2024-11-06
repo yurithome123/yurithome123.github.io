@@ -14,7 +14,7 @@
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var resolution_not_ok = window.screen.width < 1024 || window.screen.height < 768 || window.innerWidth < 768;
             if (isMobile || resolution_not_ok) {
-                window.location.href = "./mobile/index.html";
+                window.location.href = "./mobile/";
             }
         }
         window.onload = ismobile_redirect;

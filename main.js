@@ -656,7 +656,7 @@ Snake Entity
       if( this.parentState.grid.get( this.tiles[ 0 ].col, this.tiles[ 0 ].row ) == 'snake' ) {
         this.deathFlag = 1;
         clearTimeout( this.foodCreateTimeout );
-        window.location.replace(".\\portifolio\\index.html")
+        window.location.replace(".\\portifolio\\")
       }
 
       // check eating of food
@@ -689,7 +689,7 @@ Snake Entity
             parentState: _this.parentState
           });
         }, 300);
-        window.location.replace(".\\portifolio\\index.html")
+        window.location.replace(".\\portifolio\\")
       }
 
       if( this.deathFlag ) {
@@ -957,7 +957,7 @@ Game
     g.states[ g.state ].step();
       g.time.update();
       if (g.time > 10) {
-          window.location.replace(".\\portifolio\\index.html")
+          window.location.replace(".\\portifolio\\")
       }
   };
 
@@ -967,7 +967,7 @@ Game
 
 // if is mobile, redirect to https://yuridev.me/portifolio/index.html
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  window.location.replace(".\\portifolio\\index.html")
+  window.location.replace(".\\portifolio\\")
 }
 
 window.addEventListener('load', function() {
