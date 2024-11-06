@@ -37,4 +37,40 @@ function SwitchF() {
 }
 function ismobile_redirect() {
 
-}  
+}
+
+async function notifyContact(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const message = document.getElementById('contactMessage').value;
+
+    try {
+        const response = await fetch('https://api.staticforms.xyz/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                accessKey: 'YOUR_STATIC_FORMS_KEY', // Get this from staticforms.xyz
+                name: name,
+                email: email,
+                message: message,
+                subject: `Contact from Portfolio - ${name}`
+            })
+        });
+
+        if (response.ok) {
+            alert('Message sent successfully!');
+            event.target.reset();
+        } else {
+            alert('Error sending message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error sending message. Please try again.');
+    }
+    
+    return false;
+}
