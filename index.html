@@ -75,6 +75,8 @@
     <!-- Tela inicial -->
     <div id="start-screen">
         <div class="start-message">ENTER IN THE GAME</div>
+        <!-- Adicionar opção SKIP GAME -->
+        <div class="skip-message">SKIP GAME</div>
     </div>
 
     <!-- Conteúdo do jogo -->
@@ -166,6 +168,11 @@
             document.getElementById('game-content').style.display = 'block';
         });
 
+        // Adicionar listener para SKIP GAME
+        document.querySelector('.skip-message').addEventListener('click', function () {
+            window.location.href = "./portifolio/";
+        });
+
         // Alterar o título quando o usuário sair da página
         document.addEventListener('visibilitychange', function () {
             if (document.hidden) {
@@ -175,6 +182,7 @@
             }
         });
     </script>
+    <audio id="preview-music" src="musics/imbeliving.mp3"></audio>
 </body>
 
 </html>

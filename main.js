@@ -965,6 +965,11 @@ Game
 
 })();
 
+// Adicionar listener para SKIP GAME
+document.querySelector('.skip-message').addEventListener('click', function () {
+    window.location.href = "./portifolio/";
+});
+
 // if is mobile, redirect to https://yuridev.me/portifolio/index.html
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   window.location.replace(".\\portifolio\\")
@@ -978,5 +983,44 @@ window.addEventListener('load', function() {
     audio.play();
     g.step();
   }, 1000);
+});
+
+// Obter o elemento de áudio de pré-visualização
+var previewAudio = document.getElementById('preview-music');
+
+// Garantir que o volume inicial seja zero
+previewAudio.volume = 0;
+
+// Selecionar o elemento "ENTER IN THE GAME"
+var startMessage = document.querySelector('.start-message');
+
+// Listener para mouse entrar no elemento
+startMessage.addEventListener('mouseenter', function () {
+  previewAudio.play();
+  // Gradualmente aumentar o volume
+  var volume = previewAudio.volume;
+  var fadeIn = setInterval(function () {
+    if (volume < 1) {
+      volume += 0.1;
+      previewAudio.volume = Math.min(volume, 1);
+    } else {
+      clearInterval(fadeIn);
+    }
+  }, 100);
+});
+
+// Listener para mouse sair do elemento
+startMessage.addEventListener('mouseleave', function () {
+  // Gradualmente diminuir o volume
+  var volume = previewAudio.volume;
+  var fadeOut = setInterval(function () {
+    if (volume > 0) {
+      volume -= 0.1;
+      previewAudio.volume = Math.max(volume, 0);
+    } else {
+      previewAudio.pause();
+      clearInterval(fadeOut);
+    }
+  }, 100);
 });
 

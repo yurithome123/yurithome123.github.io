@@ -185,9 +185,23 @@ body {
   height: 100%;
   background-color: #000;
   display: flex;
+  flex-direction: column; /* Garantir que as mensagens sejam empilhadas verticalmente */
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+/* Estilos para o botão SKIP GAME */
+.skip-message {
+  color: #fff;
+  font-size: 1.5em;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Efeito opcional ao passar o mouse */
+.skip-message:hover {
+  text-decoration: underline;
 }
 
 .start-message {
