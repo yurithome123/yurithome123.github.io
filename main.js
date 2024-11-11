@@ -1024,3 +1024,34 @@ startMessage.addEventListener('mouseleave', function () {
   }, 100);
 });
 
+// Variável para controlar a animação de cores
+var colorAnimationInterval;
+
+// Função para iniciar a animação de cores de baixa intensidade
+function startLowIntensityColorAnimation() {
+  var hue = 0;
+  colorAnimationInterval = setInterval(function() {
+    hue = (hue + 1) % 360;
+    startMessage.style.color = 'hsl(' + hue + ', 100%, 50%)';
+  }, 100);
+}
+
+// Função para parar a animação de cores
+function stopLowIntensityColorAnimation() {
+  clearInterval(colorAnimationInterval);
+  startMessage.style.color = ''; // Restaurar cor original
+}
+
+// Atualizar o listener de 'mouseenter' de 'startMessage'
+startMessage.addEventListener('mouseenter', function () {
+  // ...existing code...
+  startLowIntensityColorAnimation();
+});
+
+// Atualizar o listener de 'mouseleave' de 'startMessage'
+startMessage.addEventListener('mouseleave', function () {
+  // ...existing code...
+  stopLowIntensityColorAnimation();
+});
+
+
