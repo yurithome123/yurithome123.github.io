@@ -16,21 +16,4 @@ function Navigate(index) {
     swiper.slideTo(index);
 }
 
-
-function BackgroundBlack() {
-    document.body.style.backgroundColor = "black";
-}
-
-function BackgroundWhite() {
-    document.body.style.backgroundColor = "white";
-}
-
-function SwitchF() {
-    if (document.body.style.backgroundColor == "white") {
-        document.body.style.backgroundColor = "black";
-        document.getElementsByName("aside").backgroundColor = "black"
-    } else {
-        document.body.style.backgroundColor = "white";
-        document.getElementsByName("aside").backgroundColor = "white"
-    }
-}
+// Removi funções não utilizadas e limpei o código

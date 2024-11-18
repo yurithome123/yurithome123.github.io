@@ -30,9 +30,12 @@ nav ul li i {
     color: #fff;
 }
 
+nav ul li i:hover {
+    color: rgb(162, 189, 212);
+}
+
 .homeLink i {
     color: #ff6347;
-
 }
 
 .profile i:hover {

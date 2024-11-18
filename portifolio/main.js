@@ -28,12 +28,13 @@ function BackgroundWhite() {
     document.body.style.backgroundColor = "white";
 }
 function SwitchF() {
-    if (document.body.style.backgroundColor == "white") {
+    if (document.body.style.backgroundColor === "white") {
         document.body.style.backgroundColor = "black";
-        document.getElementsByName("aside").backgroundColor = "black"
-    } else
+        document.querySelector("aside").style.backgroundColor = "black";
+    } else {
         document.body.style.backgroundColor = "white";
-        document.getElementsByName("aside").backgroundColor = "white"
+        document.querySelector("aside").style.backgroundColor = "white";
+    }
 }
 function ismobile_redirect() {
 

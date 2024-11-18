@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonbon&display=swap');
+
 * {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
 :root {
 	--hue: 223;
 	--bg: hsl(var(--hue),10%,90%);
@@ -11,21 +14,21 @@
 	--trans-dur: 0.5s;
 	--trans-timing1: cubic-bezier(0.65,0,0.35,1);
 	--trans-timing2: cubic-bezier(0.65,0,0.35,1.5);
-	font-size: calc(56px + (120 - 56) * (100vw - 280px) / (3840 - 280));
+	font-size: 16px;
 }
-body,
-input {
-	color: var(--fg);
-	font: 1em/1.5 sans-serif;
-	transition:
-		background-color var(--trans-dur) var(--trans-timing1),
-		color var(--trans-dur) var(--trans-timing1);
-}
+
 body {
 	background-color: var(--bg);
 	display: flex;
 	height: 100vh;
+	font-family: 'Poppins', sans-serif;
 }
+
+main {
+	flex: 1;
+	display: flex;
+}
+
 .switch {
 	display: flex;
 	margin: auto;
@@ -218,4 +221,65 @@ body {
 				0.0625em 0.0625em 0.0625em hsla(0,0%,0%,0.3);
 		}
 	}
+}
+
+aside {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100%
+    font-size: 1.1rem;
+    background-color: #212529;
+    backdrop-filter: blur(20px);
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Adjust columns to be equal fractions
+    grid-gap: 20px; // Add gap between grid items
+    padding: 50px; // Reduce padding
+    box-sizing: border-box;
+
+    .heading {
+        grid-column: 1 / -1; // Ensure heading spans all columns
+        font-size: 2rem; // Adjust heading size
+    }
+
+    .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Center content horizontally
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.437);
+        border-radius: 5px;
+        backdrop-filter: blur(10px);
+        transition-duration: 0.25s;
+
+        i {
+            font-size: 1.5rem; // Reduzir mais o tamanho do ícone
+            color: #80ed99;
+            margin-bottom: 8px; // Ajustar margens se necessário
+        }
+
+        h2 {
+            font-size: 0.9rem; // Reduzir mais o tamanho do título
+            color: #80ed99;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 0.7rem; // Reduzir mais o tamanho do texto
+        }
+
+        &:hover {
+            background-color: #80ed99;
+            color: #176d2d;
+
+            h2,
+            i {
+                color: #176d2d;
+            }
+        }
+    }
 }
