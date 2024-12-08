@@ -1,0 +1,54 @@
+body {
+    background-color: #1d6ebe;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-custom:hover {
+    background-color: #218838;
+}
+
+.textos {
+    background-color: rgba(160, 233, 178, 0.8);
+    border-radius: 18px;
+
+}
+
+div.principal {
+
+    font-style: bold;
+
+    text-align: center;
+    background-image: url('./imagens_pratica/banner-1600x600_2.png');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+div.servicos{
+    background-color: rgba(160, 233, 178, 0.8);
+    text-align: center;
+    border-radius: 18px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.card.p-4.shadow-sm {
+    margin: 0 auto;
+    margin-top: 20px; /* Adiciona espaçamento vertical */
+}
+.text-center.mb-4 {
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.form-control {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
