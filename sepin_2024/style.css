@@ -90,3 +90,117 @@ body {
   .fade {
     animation: fadeIn 0.5s ease-in;
   }
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out;
+}
+
+.lock-container {
+    text-align: center;
+}
+
+.lock {
+    width: 100px;
+    height: 120px;
+    margin: 0 auto 20px;
+    position: relative;
+    animation: unlock 2s ease infinite;
+}
+
+.lock-body {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.lock-hole {
+    width: 20px;
+    height: 20px;
+    background: var(--background-color);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Ajustar o ponto de origem da rotação do gancho */
+.lock-hook {
+    width: 40px;
+    height: 50px;
+    border: 10px solid var(--primary-color);
+    border-bottom: none;
+    border-radius: 40px 40px 0 0;
+    position: absolute;
+    top: -10px; /* Ajustado para melhor posicionamento */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px var(--primary-color);
+    transform-origin: bottom center;
+    will-change: transform; /* Melhora performance da animação */
+}
+
+.loading-text {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+@keyframes unlock {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateY(-5px) rotate(0);
+    }
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Simplificar a animação de abertura */
+@keyframes openLock {
+    0% {
+        transform: translateX(-50%) rotate(0);
+    }
+    100% {
+        transform: translateX(-50%) rotate(90deg); /* Girar para a direita */
+    }
+}
+
+.lock-hook.opening {
+    animation: openLock 0.8s ease forwards; /* Reduzir tempo para movimento mais rápido */
+}
+
+.lock-container.opening .loading-text {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

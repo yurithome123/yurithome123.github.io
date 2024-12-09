@@ -19,32 +19,106 @@ scene.add(light);
 const pivot = new THREE.Object3D();
 scene.add(pivot);
 
-// Variável para armazenar o modelo
-let model;
+// Variáveis para armazenar os modelos
+let currentModel = null;
+let model1 = null;
+let model2 = null;
+let isFirstModel = true;
 
-// Carregar o modelo (GLB/GLTF)
-const loader = new GLTFLoader();
-loader.load('modelo/modelo.glb', (gltf) => {
-  model = gltf.scene;
+// Variável para controlar o carregamento
+let modelsLoaded = 0;
+const totalModels = 2;
+
+// Função para verificar se todos os modelos foram carregados
+function checkAllModelsLoaded() {
+  modelsLoaded++;
+  if (modelsLoaded === totalModels) {
+    // Todos os modelos carregados, animar e esconder tela de loading
+    setTimeout(() => {
+      const lockHook = document.querySelector('.lock-hook');
+      const lockContainer = document.querySelector('.lock-container');
+      lockHook.classList.add('opening');
+      lockContainer.classList.add('opening');
+      
+      setTimeout(() => {
+        document.getElementById('loading-screen').classList.add('hidden');
+      }, 1000);
+    }, 1000);
+  }
+}
+
+// Função para carregar modelo
+function loadModel(url, callback) {
+  const loader = new GLTFLoader();
+  loader.load(url, (gltf) => {
+    const model = gltf.scene;
+    const box = new THREE.Box3().setFromObject(model);
+    const center = box.getCenter(new THREE.Vector3());
+    model.position.sub(center);
+    callback(model);
+  }, undefined, (error) => {
+    console.error('Erro ao carregar o modelo:', error);
+  });
+}
+
+// Carregar ambos os modelos
+loadModel('modelo/modelo.glb', (loadedModel) => {
+  model1 = loadedModel;
+  currentModel = model1;
+  pivot.add(currentModel);
+  checkAllModelsLoaded();
+});
+
+loadModel('modelo/modelo2.glb', (loadedModel) => {
+  model2 = loadedModel;
+  model2.visible = false;
+  pivot.add(model2);
   
-  // Calcular o bounding box para obter o centro do modelo
-  const box = new THREE.Box3().setFromObject(model);
-  const center = box.getCenter(new THREE.Vector3());
-  
-  // Ajustar a posição do modelo para que fique centrado na origem
-  model.position.sub(center);
-  
-  // Adicionar o modelo ao pivot
-  pivot.add(model);
-  
-  // Definir o alvo dos controles para a origem
+  // Configurar controles e câmera
   controls.target.set(0, 0, 0);
   controls.update();
-  
-  // Posicionar a câmera em um deslocamento da origem
   camera.position.set(0, 40, 50);
-}, undefined, (error) => {
-  console.error('Erro ao carregar o modelo:', error);
+  
+  checkAllModelsLoaded();
+});
+
+// Adicionar evento para alternar modelos
+document.getElementById('toggle-model').addEventListener('click', () => {
+  isFirstModel = !isFirstModel;
+  
+  // Fade out
+  if (currentModel) {
+    currentModel.traverse((child) => {
+      if (child.isMesh) {
+        child.material.transparent = true;
+        child.material.opacity = 0;
+      }
+    });
+  }
+  
+  // Trocar modelos
+  setTimeout(() => {
+    if (isFirstModel) {
+      model2.visible = false;
+      model1.visible = true;
+      currentModel = model1;
+    } else {
+      model1.visible = false;
+      model2.visible = true;
+      currentModel = model2;
+    }
+    
+    // Fade in
+    currentModel.traverse((child) => {
+      if (child.isMesh) {
+        child.material.transparent = true;
+        child.material.opacity = 1;
+      }
+    });
+  }, 500);
+
+  const button = document.getElementById('toggle-model');
+  button.textContent = isFirstModel ? 'Modelo Aberto' : 'Modelo Fechado';
 });
 
 // Posicionar a câmera
@@ -100,14 +174,14 @@ siteThemeButton.addEventListener('click', () => {
     document.documentElement.style.setProperty('--primary-color', '#0ff');
     document.documentElement.style.setProperty('--secondary-color', '#00f');
     document.documentElement.style.setProperty('--container-bg', '#1a1a1a');
-    siteThemeButton.textContent = 'Site: Modo Claro';
+    siteThemeButton.textContent = 'Site: Modo Escuro';
   } else {
     document.documentElement.style.setProperty('--background-color', '#fff');
     document.documentElement.style.setProperty('--text-color', '#000');
     document.documentElement.style.setProperty('--primary-color', '#007bff');
     document.documentElement.style.setProperty('--secondary-color', '#0056b3');
     document.documentElement.style.setProperty('--container-bg', '#f0f0f0');
-    siteThemeButton.textContent = 'Site: Modo Escuro';
+    siteThemeButton.textContent = 'Site: Modo Claro';
   }
 });
 
