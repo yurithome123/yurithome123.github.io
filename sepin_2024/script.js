@@ -185,6 +185,26 @@ siteThemeButton.addEventListener('click', () => {
   }
 });
 
+// Adicionar controle de navegação
+const show3DButton = document.getElementById('show-3d');
+const showSlidesButton = document.getElementById('show-slides');
+const section3D = document.getElementById('3d-section');
+const slidesSection = document.getElementById('slides-section');
+
+show3DButton.addEventListener('click', () => {
+    section3D.classList.remove('hidden');
+    slidesSection.classList.add('hidden');
+    show3DButton.classList.add('active');
+    showSlidesButton.classList.remove('active');
+});
+
+showSlidesButton.addEventListener('click', () => {
+    section3D.classList.add('hidden');
+    slidesSection.classList.remove('hidden');
+    show3DButton.classList.remove('active');
+    showSlidesButton.classList.add('active');
+});
+
 // Função de animação
 function animate() {
   requestAnimationFrame(animate);

@@ -21,14 +21,34 @@
             <p class="loading-text">Carregando...</p>
         </div>
     </div>
-    <div class="content-wrapper">
-        <h1>Fechadura Eletrônica Sepin - Yuri Thomé</h1>
-        <div id="container"></div>
-        <div class="button-group">
-            <button id="toggle-rotation">Iniciar Rotação</button>
-            <button id="toggle-model">Alternar Modelo</button>
-            <button id="toggle-model-theme">Alternar Tema do Modelo 3D</button>
-            <button id="toggle-site-theme">Alternar Tema do Site</button>
+
+    <nav class="nav-buttons">
+        <button id="show-3d" class="active">Visualizador 3D</button>
+        <button id="show-slides">Apresentação</button>
+    </nav>
+
+    <div id="3d-section" class="content-section">
+        <div class="content-wrapper">
+            <h1>Fechadura Eletrônica Sepin - Yuri Thomé</h1>
+            <div id="container"></div>
+            <div class="button-group">
+                <button id="toggle-rotation">Iniciar Rotação</button>
+                <button id="toggle-model">Alternar Modelo</button>
+                <button id="toggle-model-theme">Alternar Tema do Modelo 3D</button>
+                <button id="toggle-site-theme">Alternar Tema do Site</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="slides-section" class="content-section hidden">
+        <div style="position: relative; width: 100%; height: 0; padding-top: 111.1144%;
+            padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+            border-radius: 8px; will-change: transform;">
+            <iframe loading="lazy"
+                style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGYwfWfbLg&#x2F;yvIt7iuvkPSuSt7wbYaw8Q&#x2F;view?embed"
+                allowfullscreen="allowfullscreen" allow="fullscreen">
+            </iframe>
         </div>
     </div>
 
