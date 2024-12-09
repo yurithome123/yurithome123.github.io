@@ -7,6 +7,7 @@
     <title>Calculadora de Esforços em Vigas Biapoiadas</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="script.js"></script>
 </head>
 
@@ -62,6 +63,11 @@
             <button onclick="addMoment()" class="add-btn">+ Adicionar Momento</button>
 
             <button onclick="calculateDiagrams()" class="calculate-btn">Calcular Diagramas</button>
+        </div>
+        <div id="equations" class="equations-container">
+            <label>
+                <input type="checkbox" id="detailedView" onchange="toggleDetailedView()">Modo Detalhado
+            </label>            
         </div>
 
         <h2>Diagrama de Força Cortante</h2>

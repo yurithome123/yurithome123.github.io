@@ -1,3 +1,10 @@
+//configs
+const config = {
+    responsive: true,
+    displayModeBar: true // Habilita barra de ferramentas para zoom
+};
+
+
 // Funções de interface
 function createRemoveButton() {
     const button = document.createElement('button');
@@ -171,9 +178,11 @@ function renderChart(elementId, data, label) {
         x: data.map(point => point.x),
         y: data.map(point => point.y),
         type: 'scatter',
-        mode: 'lines',
+        mode: 'lines+markers', // Adiciona marcadores
         line: { color: 'rgb(75, 192, 192)', width: 2 },
-        fill: 'tozeroy'
+        fill: 'tozeroy',
+        text: data.map(point => `(${point.x.toFixed(2)}, ${point.y.toFixed(2)})`), // Tooltip com valores
+        hoverinfo: 'text' // Exibe valores no hover
     };
 
     const layout = {
@@ -186,11 +195,30 @@ function renderChart(elementId, data, label) {
 
     const config = {
         responsive: true,
-        displayModeBar: false
+        displayModeBar: true // Permite zoom
     };
 
     Plotly.newPlot(elementId, [trace], layout, config);
 }
+function toggleDetailedView() {
+    const detailedView = document.getElementById('detailedView').checked;
+    if (detailedView) {
+        // Re-renderize os gráficos com mais detalhes
+        calculateDiagrams(true);
+    } else {
+        calculateDiagrams(false);
+    }
+}
+
+function displayEquations() {
+    const equationsContainer = document.getElementById('equations');
+    equationsContainer.innerHTML = `
+        $$ V(x) = \\text{Equação da força cortante} $$
+        $$ M(x) = \\text{Equação do momento fletor} $$
+    `;
+    MathJax.typesetPromise();
+}
+
 
 // Garantir que as funções estejam disponíveis globalmente
 window.addLoad = addLoad;
