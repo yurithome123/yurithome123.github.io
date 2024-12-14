@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>YuriDeveloper - Portifolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Portifólio - YuriDeveloper</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projetos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item project-link" href="audiophmetro.html">AudiopHmetro Digital</a>
+                        <a class="dropdown-item project-link" href="fechadura.html">Fechadura Eletrônica</a>
+                        <a class="dropdown-item project-link" href="oculos.html">Óculos Inteligente</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Find Tallent PREMIUM</a>
+                        <a class="dropdown-item" href="#">AIYSTEM OS</a>
+                        <a class="dropdown-item" href="#">IPE_AI</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Trigonometria</a>
+                        <a class="dropdown-item" href="#">Conversor de Medidas</a>
+                        <a class="dropdown-item" href="#">Cálculo com Matrizes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cobrinha 2D</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Conquistas</a>
+                </li>
+
+                <li class="nav-item"> <a class="nav-link" href="#" data-toggle="modal"
+                        data-target="#contatoModal">Contato</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Digite aqui" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="contatoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contatoModalLabel">Contato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="subscriberform.php">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" class="form-control" id="assunto" name="assunto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea class="form-control" id="mensagem" name="mensagem" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-4 p-3"
+        style="background-color: black; color: antiquewhite; border-top: 2px solid antiquewhite;">
+        <p>&copy; 2024 Portifólio 2.0. Todos os direitos reservados.</p>
+    </footer>
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+    
+</body>
+
+</html>

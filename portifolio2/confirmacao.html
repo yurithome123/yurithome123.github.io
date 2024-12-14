@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Confirmação de Contato</title>
+    <!-- Meta responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-5">Confirmar e Enviar Informações</h2>
+        <form action="processar_formulario.php" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="interesse">Interesse:</label>
+                <select class="form-control" id="interesse" name="interesse" required>
+                    <option value="AudiopHmetro">AudiopHmetro</option>
+                    <!-- Adicione outras opções se necessário -->
+                </select>
+            </div>
+            <!-- Campos adicionais -->
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone">
+            </div>
+            <div class="form-group">
+                <label for="empresa">Empresa:</label>
+                <input type="text" class="form-control" id="empresa" name="empresa">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script para preencher os campos com os dados da URL -->
+    <script>
+        // Função para obter os parâmetros da URL
+        function getQueryParams() {
+            var params = {};
+            var queryString = window.location.search.substring(1);
+            var vars = queryString.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1].replace(/\+/g, ' '));
+            }
+            return params;
+        }
+
+        var params = getQueryParams();
+
+        // Preenche os campos do formulário com os dados
+        document.getElementById('nome').value = params['nome'] || '';
+        document.getElementById('email').value = params['email'] || '';
+        document.getElementById('mensagem').value = params['mensagem'] || '';
+        document.getElementById('interesse').value = 'AudiopHmetro';
+    </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>AudiopHmetro Digital - YuriDeveloper</title>
+    <!-- Meta responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Tela de Carregamento -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">YuriDeveloper</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-uppercase" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projetos.html">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmacao.html">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção Hero -->
+    <header class="hero-section text-center text-white d-flex align-items-center"
+        style="background-image: url('imagens_pratica/tech-background.jpeg'); height: 60vh; background-size: cover; background-position: center;">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">AudiopHmetro Digital</h1>
+            <p class="lead">Tecnologia avançada para medições precisas de pH</p>
+            <a href="#about" class="btn btn-primary mt-4">Saiba Mais</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo do Projeto -->
+    <section id="about" class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Sobre o Projeto</h2>
+                <p>O AudiopHmetro Digital é um instrumento inovador desenvolvido para medir o nível de pH com alta
+                    precisão utilizando tecnologias de ponta.</p>
+                <ul>
+                    <li>Sensores avançados para leitura exata</li>
+                    <li>Interface intuitiva e amigável</li>
+                    <li>Conectividade com dispositivos móveis</li>
+                    <li>Design ergonômico e portátil</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="imagens_pratica/audioph.png" class="img-fluid" alt="AudiopHmetro Digital">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Recursos -->
+    <section class="features-section bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Recursos Tecnológicos</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-microchip fa-3x mb-3 text-primary"></i>
+                    <h4>Sensores Avançados</h4>
+                    <p>Utiliza sensores de última geração para leituras precisas e confiáveis.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-sync-alt fa-3x mb-3 text-primary"></i>
+                    <h4>Atualizações em Tempo Real</h4>
+                    <p>Receba dados instantaneamente e monitore as alterações de pH ao vivo.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-mobile-alt fa-3x mb-3 text-primary"></i>
+                    <h4>Aplicativo Móvel</h4>
+                    <p>Controle e visualize os dados diretamente do seu smartphone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Perguntas Frequentes -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Perguntas Frequentes</h2>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="faqHeading-1">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#faqCollapse-1"
+                                aria-expanded="true" aria-controls="faqCollapse-1">
+                                Como calibro o AudiopHmetro?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="faqCollapse-1" class="collapse show" aria-labelledby="faqHeading-1"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            Siga as instruções no manual para calibrar o dispositivo usando soluções padrão.
+                        </div>
+                    </div>
+                </div>
+                <!-- Pergunta 2 -->
+                <div class="card">
+                    <div class="card-header" id="faqHeading-2">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faqCollapse-2"
+                                aria-expanded="false" aria-controls="faqCollapse-2">
+                                O AudiopHmetro é compatível com todos os smartphones?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
+                        <div class="card-body">
+                            Sim, o dispositivo é compatível com smartphones Android e iOS através do nosso aplicativo
+                            dedicado.
+                        </div>
+                    </div>
+                </div>
+                <!-- Pergunta 3 -->
+                <div class="card">
+                    <div class="card-header" id="faqHeading-3">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faqCollapse-3"
+                                aria-expanded="false" aria-controls="faqCollapse-3">
+                                Qual é a garantia do produto?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
+                        <div class="card-body">
+                            Oferecemos uma garantia de 12 meses para defeitos de fabricação.
+                        </div>
+                    </div>
+                </div>
+                <!-- Pergunta 4 -->
+                <div class="card">
+                    <div class="card-header" id="faqHeading-4">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faqCollapse-4"
+                                aria-expanded="false" aria-controls="faqCollapse-4">
+                                É possível exportar os dados das medições?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
+                        <div class="card-body">
+                            Sim, você pode exportar os dados em formatos CSV e PDF através do aplicativo ou pelo
+                            software desktop.
+                        </div>
+                    </div>
+                </div>
+                <!-- Pergunta 5 -->
+                <div class="card">
+                    <div class="card-header" id="faqHeading-5">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faqCollapse-5"
+                                aria-expanded="false" aria-controls="faqCollapse-5">
+                                Como faço a manutenção do sensor?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5" data-parent="#accordion">
+                        <div class="card-body">
+                            O sensor deve ser limpo a cada uso com água destilada e armazenado com a solução de
+                            armazenamento específica.
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais perguntas conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interativo -->
+    <div class="container my-5">
+        <h3 class="text-center">Nossa Localização</h3>
+        <div class="map-responsive">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714939.8611242743!2d-53.962960311215134!3d-24.593649247589095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94db0b9430b8629d%3A0xe893fd5063cef061!2zUGFyYW7DoQ!5e0!3m2!1spt-BR!2sbr!4v1733771315964!5m2!1spt-BR!2sbr"
+                width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Seção de Contato -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Entre em Contato</h2>
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Nome</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="seuemail@exemplo.com"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputMessage">Mensagem</label>
+                    <textarea class="form-control" id="inputMessage" rows="5" placeholder="Escreva sua mensagem"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-4" style="background-color: #000; color: #fff;">
+        <div class="container">
+            <p>&copy; 2024 YuriDeveloper. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://x.com/iyu_zin" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/yuri-thom%C3%A9-marini-silva-15a11a257/" class="text-white mr-3"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/yurithome123/" class="text-white"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Coleta os valores dos campos
+            var nome = document.getElementById('inputName').value;
+            var email = document.getElementById('inputEmail').value;
+            var mensagem = document.getElementById('inputMessage').value;
+
+            // Adiciona a informação extra
+            var interesse = "Está interessado no AudiopHmetro.";
+
+            // Cria uma string de consulta para passar os dados na URL
+            var queryString = '?nome=' + encodeURIComponent(nome) +
+                '&email=' + encodeURIComponent(email) +
+                '&mensagem=' + encodeURIComponent(mensagem) +
+                '&interesse=' + encodeURIComponent(interesse);
+
+            // Redireciona para a nova página com os dados
+            window.location.href = 'confirmacao.html' + queryString;
+        });
+    </script>
+</body>
+
+</html>
