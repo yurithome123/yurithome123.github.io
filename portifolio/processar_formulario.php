@@ -29,8 +29,8 @@ try {
     $mail->CharSet = 'UTF-8';
 
     // Configurações do email
-    $mail->setFrom('seu.email@gmail.com', 'YuriDeveloper'); // Remetente
-    $mail->addAddress('seu.email@gmail.com', 'YuriDeveloper'); // Destinatário
+    $mail->setFrom('yurithomemarinisilva99@gmail.com', 'YuriDeveloper'); // Remetente
+    $mail->addAddress('yurithomemarinisilva99@gmail.com', 'YuriDeveloper'); // Destinatário
     $mail->addReplyTo($email, $nome); // Responder para o email do formulário
 
     // Conteúdo do email
