@@ -161,6 +161,10 @@ body {
     background: linear-gradient(45deg, #FFD700, #FFA500);
     color: #000;
 }
+.badge.silver {
+    background: linear-gradient(45deg, #C0C0C0, #A9A9A9);
+    color: #000;
+}
 
 .skills-container {
     max-width: 800px;
@@ -252,6 +256,7 @@ body {
 }
 
 .code-showcase {
+    position: relative;
     background: #1e1e1e;
     border-radius: 8px;
     margin: 15px 0;
@@ -259,18 +264,31 @@ body {
     overflow-x: auto;
 }
 
-.code-showcase pre {
-    margin: 0;
-    padding: 15px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #d4d4d4;
+.code-showcase .code-toggle,
+.code-showcase .copy-code {
+    display: inline-block;
+    margin-right: 10px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
 }
 
-.code-showcase code {
-    display: block;
-    white-space: pre;
+.code-showcase .code-toggle:hover,
+.code-showcase .copy-code:hover {
+    background: #1976D2;
+}
+
+.code-showcase .copy-code {
+    background: #4CAF50; /* Verde para diferenciar */
+}
+
+.code-showcase .copy-code:hover {
+    background: #388E3C;
 }
 
 .code-content {
@@ -282,30 +300,6 @@ body {
 .code-content.visible {
     display: block;
     opacity: 1;
-}
-
-.code-toggle {
-    background: #2196F3;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-}
-
-.code-toggle:hover {
-    background: #1976D2;
-}
-
-[data-theme="dark"] .code-toggle {
-    background: #64b5f6;
-}
-
-[data-theme="dark"] .code-toggle:hover {
-    background: #90caf9;
 }
 
 .code-description {
@@ -354,4 +348,188 @@ body {
 
 [data-theme="dark"] .competition-photo {
     box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+}
+
+/* Adicione este código ao final do seu arquivo CSS */
+
+/* Estilos para elementos animados no scroll */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.reveal-element.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Diferentes tipos de animações */
+.reveal-fade-right {
+    transform: translateX(-50px);
+}
+
+.reveal-fade-left {
+    transform: translateX(50px);
+}
+
+.reveal-fade-up {
+    transform: translateY(50px);
+}
+
+.reveal-fade-down {
+    transform: translateY(-50px);
+}
+
+.reveal-fade-in {
+    transform: translateY(0);
+    opacity: 0;
+}
+
+/* Diferentes velocidades de animação */
+.reveal-delay-1 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.4s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.6s;
+}
+
+/* Estilos para o popup de código em tela cheia */
+.code-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro com opacidade */
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.code-popup.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.code-popup-content {
+    background-color: #1e1e1e; /* Fundo sólido para melhor contraste */
+    color: #ffffff; /* Texto branco para legibilidade */
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #ffffff; /* Botão de fechar visível */
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s;
+}
+
+.close-popup:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Destaque ao passar o mouse */
+}
+
+.code-popup pre {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #2d2d2d; /* Fundo do código */
+    border-radius: 5px;
+    overflow-x: auto;
+    width: 100%;
+    font-size: 14px;
+    color: #dcdcdc; /* Texto do código */
+}
+
+.code-popup-description {
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444; /* Linha divisória */
+}
+
+#code-popup-title {
+    margin-top: 0;
+    padding-right: 40px;
+    color: #ffcc00; /* Destaque para o título */
+}
+
+/* Quando o popup está aberto, impede o scroll do corpo */
+body.popup-open {
+    overflow: hidden;
+}
+
+.copy-code {
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    font-size: 14px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-code:hover {
+    background: #1976D2;
+}
+
+.copy-code:active {
+    background: #0d47a1;
+}
+
+/* Estratégia - conteúdo oculto por padrão */
+.strategy-content {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.5s ease;
+}
+
+.strategy-content.visible {
+    display: block;
+    opacity: 1;
+    max-height: 1000px; /* Altura suficiente para exibir o conteúdo */
+}
+
+.strategy-toggle {
+    display: inline-block;
+    margin-right: 10px;
+    background: #f24303;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
 }
